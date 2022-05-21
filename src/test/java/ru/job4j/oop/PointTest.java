@@ -60,4 +60,20 @@ public class PointTest {
         Assert.assertEquals(expected, out, 0.1);
     }
 
+    @Test
+    public void when123to159then6dot708() {
+        double expected = 6.708;
+        int x1 = 1;
+        int y1 = 2;
+        int z1 = 3;
+        int x2 = 1;
+        int y2 = 5;
+        int z2 = 9;
+        Point point = new Point(x1, y1, z1);
+        Point secondPoint = new Point(x2, y2, z2);
+        double out = point.distance3d(secondPoint);
+        Assert.assertEquals(expected, out, 0.1);
+        Assert.assertEquals(expected, out, 0.1);
+    }
+
 }
