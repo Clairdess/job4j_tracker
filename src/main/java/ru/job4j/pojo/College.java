@@ -1,7 +1,5 @@
 package ru.job4j.pojo;
 
-import ru.job4j.pojo.Student;
-
 import java.time.LocalDateTime;
 
 public class College {
