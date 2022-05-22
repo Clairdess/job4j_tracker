@@ -9,7 +9,7 @@ public class Config {
         this.name = name;
     }
 
-    public String getProperty(String key) {
+    private String getProperty(String key) {
         return search(key);
     }
 
