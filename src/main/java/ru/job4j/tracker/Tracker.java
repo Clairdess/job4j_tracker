@@ -14,38 +14,40 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-        Item rsl = null;
-        for (int index = 0; index <= size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
+    }
+
+    public Item[] findAll() {
+        return Arrays.copyOf(items, size);
+    }
+
+    public Item[] findByName(String name) {
+        int count = 0;
+        Item[] arr = new Item[items.length];
+        for (int i = 0; i < size; i++) {
+            if (items[i].getName().equals(name)) {
+                arr[count] = items[i];
+                count++;
+            }
+        }
+        return Arrays.copyOf(arr, count);
+    }
+
+    public boolean replace(int id, Item item) {
+        Item replacableItem;
+        findById(id);
+        return false;
+    }
+
+    private int indexOf(int id) {
+        int rsl = -1;
+        for (int index = 0; index < size; index++) {
+            if (items[index].getId() == id) {
+                rsl = index;
                 break;
             }
         }
         return rsl;
-    }
-
-    public Item[] findAll() {
-        int size = 0;
-        Item[] arr = new Item[items.length];
-        for (Item item : items) {
-            if (item != null) {
-                arr[size] = item;
-                size++;
-            }
-        }
-        return Arrays.copyOf(arr, size);
-    }
-
-    public Item[] findByName(String name) {
-        int size = 0;
-        Item[] arr = new Item[items.length];
-        for (Item item : items) {
-            if (item != null && item.getName().equals(name)) {
-                arr[size] = item;
-                size++;
-            }
-        }
-        return Arrays.copyOf(arr, size);
     }
 }
