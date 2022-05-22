@@ -13,7 +13,7 @@ public class Calculator {
     }
 
     public int minus(int a) {
-        return x - a;
+        return a - x;
     }
 
     public int divide(int a) {
@@ -21,8 +21,7 @@ public class Calculator {
     }
 
     public int sumAllOperation(int a) {
-        Calculator temp = new Calculator();
-        return sum(a) + temp.divide(a) + temp.minus(a) + temp.multiply(a);
+        return sum(a) + divide(a) + minus(a) + multiply(a);
     }
 
     public static void main(String[] args) {
