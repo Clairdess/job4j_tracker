@@ -35,6 +35,7 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) {
+
         Item replacingItem = findById(id);
         if (replacingItem == null) {
             return false;
@@ -43,6 +44,7 @@ public class Tracker {
         replacingItem = item;
         items[id - 1] = replacingItem;
         return true;
+
     }
 
     private int indexOf(int id) {
@@ -57,6 +59,7 @@ public class Tracker {
     }
 
     public boolean delete(int id) {
+
         int index = indexOf(id);
         if (index == -1) {
             return false;
@@ -68,5 +71,6 @@ public class Tracker {
         items[size - 1] = null;
         size--;
         return true;
+
     }
 }
