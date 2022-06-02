@@ -103,6 +103,7 @@ public class StartUI {
                 "Exit Program"
         };
         System.out.println("Menu:");
+
         for (int i = 0; i < menu.length; i++) {
             System.out.println(i + ". " + menu[i]);
         }
